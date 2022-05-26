@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Relatorio_MusicasAlbum" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f6e9baa5-8fe8-4d82-9488-ff71351f2186">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="conexao myalbuns"/>
+	<queryString language="SQL">
+		<![CDATA[select album.al_id, album.al_titulo, album.al_ano, musica.mus_id, musica.mus_titulo, musica.mus_duracao from album, musica, album_musica where album_musica.al_id=album.al_id and album_musica.mus_id=musica.mus_id order by al_titulo]]>
+	</queryString>
+	<field name="al_titulo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="al_titulo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="album"/>
+	</field>
+	<field name="al_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="al_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="album"/>
+	</field>
+	<field name="al_ano" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="al_ano"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="album"/>
+	</field>
+	<field name="mus_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="mus_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="musica"/>
+	</field>
+	<field name="mus_titulo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="mus_titulo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="musica"/>
+	</field>
+	<field name="mus_duracao" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="mus_duracao"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="musica"/>
+	</field>
+	<group name="Group1">
+		<groupExpression><![CDATA[$F{al_id}]]></groupExpression>
+		<groupHeader>
+			<band height="64">
+				<textField>
+					<reportElement mode="Opaque" x="0" y="0" width="555" height="32" forecolor="#006699" backcolor="#E6E6E6" uuid="1ab35837-0cea-4e35-9016-547ab20d643f"/>
+					<textElement>
+						<font size="24" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{al_id}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="-20" y="32" width="595" height="1" forecolor="#666666" uuid="3ff26ad4-24c0-4bec-bef2-4b1b8f1bdff0"/>
+				</line>
+				<textField textAdjust="StretchHeight">
+					<reportElement x="170" y="0" width="274" height="33" uuid="657a3d26-64e2-4113-8507-68178f4c82ec">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="61c14717-1fd1-46bb-a205-c038e29ae49e"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font size="16"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{al_titulo}]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight">
+					<reportElement x="490" y="6" width="65" height="20" uuid="5e5733f5-3229-4038-bafa-c18682f13b6a">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f4c5f1f5-7197-47e4-923b-488132adf04d"/>
+					</reportElement>
+					<textElement textAlignment="Right">
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{al_ano}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="444" y="3" width="46" height="30" uuid="7fc7eac8-2ca2-48e5-ae9f-91b7f3dcbcf3"/>
+					<textElement>
+						<font size="18"/>
+					</textElement>
+					<text><![CDATA[Ano: ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="470" y="32" width="74" height="30" uuid="d91d2d7e-804e-45a8-86cd-903055c9c97b"/>
+					<textElement>
+						<font size="16"/>
+					</textElement>
+					<text><![CDATA[Duração]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="112" y="32" width="129" height="30" uuid="9a1a33bd-6ef7-4989-9103-0fdecb811dd0"/>
+					<textElement>
+						<font size="16"/>
+					</textElement>
+					<text><![CDATA[Titulo da Música]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="33" width="90" height="29" uuid="b5ffb5bb-5c48-4f34-be3a-bf3070fe0c19"/>
+					<textElement>
+						<font size="16"/>
+					</textElement>
+					<text><![CDATA[ID Música]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="110" y="0" width="60" height="30" uuid="251700c4-3707-41bd-b039-d65a419fb94d"/>
+					<textElement verticalAlignment="Middle">
+						<font size="18"/>
+					</textElement>
+					<text><![CDATA[Album:]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="a5d98e30-25ef-4760-9dec-7fc32a9dd480"/>
+				<staticText>
+					<reportElement x="20" y="20" width="234" height="43" forecolor="#FFFFFF" uuid="5bc7b16b-7543-4a26-a096-1a3497f685b9"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[MúsicasFX]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="328" y="0" width="235" height="92" forecolor="#FFFFFF" uuid="40c29c95-b6f2-4b1b-b4d7-479b85be41a6"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="16" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Relação de Músicas pelo Album]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<detail>
+		<band height="20">
+			<textField textAdjust="StretchHeight">
+				<reportElement x="0" y="0" width="111" height="20" uuid="3d03a126-22fc-443a-80f8-a2d906ea69e9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="87921d69-c65d-458d-ac34-77fad7550169"/>
+				</reportElement>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mus_id}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="111" y="0" width="269" height="20" uuid="b7eeda30-2679-4911-ae62-3f15d94645d9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="89ce5a47-3b99-47d8-af3b-7ec0aabc2ad3"/>
+				</reportElement>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mus_titulo}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="444" y="0" width="111" height="20" uuid="d1748a55-c7a2-443c-afe2-fb4cf0689482">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6f4ce1a9-a56c-4b23-8afd-886299862918"/>
+				</reportElement>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mus_duracao}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="46548700-0eca-4fe7-9c27-e605344b4fb5"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="7df38791-d12d-4d7e-a100-6d9c47e7a03d"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="35fcf7b9-9cbd-4313-9029-831c6878b0f7"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>
